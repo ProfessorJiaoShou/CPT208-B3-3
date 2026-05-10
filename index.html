@@ -16,7 +16,7 @@
             --background: #f8fafc;
             --card-bg: #ffffff;
             --text-primary: #1e293b;
-            --text-secondary: #64748b;
+            --text-secondary: #64748b;Stakeholders
             --border: #e2e8f0;
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s ease;
@@ -190,21 +190,29 @@
             position: relative;
             padding-left: 25px;
         }
-        
-        li::before {
-            content: '✓';
+
+        #gap li::before {
             position: absolute;
             left: 0;
-            color: var(--success);
             font-weight: bold;
         }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: var(--transition);
-            position: relative;
+
+        #gap ul.good li::before {
+            content: '✓';
+            color: var(--success);
         }
+
+        #gap ul.bad li::before {
+            content: '✗';
+            color: var(--danger);
+        }
+
+    a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: var(--transition);
+        position: relative;
+    }
         
         a:hover {
             color: var(--primary-dark);
@@ -421,117 +429,542 @@
     <header>
         <div class="content">
             <h1>XJTLU Campus Tour</h1>
-            <p>CPT208 Process Portfolio | Group [Your Group ID]</p>
+            <p>CPT208 Process Portfolio | Group B3-3</p>
+            <div class="badges">
+                <span class="badge badge-primary">Heritage Track</span>
+                <span class="badge badge-secondary">Interactive</span>
+                <span class="badge badge-accent">Playful</span>
+            </div>
         </div>
     </header>
+    
+    <div class="section-card fade-in">
+        <h2><i class="fas fa-compass"></i> Project Overview</h2>
+        <p>
+            This project aims to develop a campus guide website designed specifically for <strong>freshmen, prospective
+                students, and visiting guests</strong>. The platform helps users quickly become familiar with the campus,
+            view building information, and find the correct routes before arriving or during their first days on campus.
+        </p>
+        <p>
+            At present, most universities only use traditional 2D maps. These maps can only show approximate locations, but
+            they cannot clearly display what buildings look like, how their internal layouts are organized, or where
+            entrances are located. This becomes especially problematic for connected teaching buildings such as <strong>SA,
+                SB, SC, and SD</strong>, which have multiple entrances and complex structures. As a result, people often get
+            lost, cannot find the correct entrance, and waste a significant amount of time.
+        </p>
+        <p>
+            To solve these problems, we upgraded the traditional 2D map by making the platform more <strong>intuitive,
+                immersive, interactive, and user-friendly</strong>. The system is designed to help users understand the
+            campus more quickly and comfortably while also promoting campus culture more effectively. In addition, it
+            provides a practical new tool to support the development of a smart campus environment.
+        </p>
+        <div style="margin-top:20px;">
+            <span class="badge badge-primary">2D/3D Navigation</span>
+            <span class="badge badge-secondary">Web-based</span>
+            <span class="badge badge-accent">Community Sharing</span>
+        </div>
+    </div>
 
     <div class="section-card fade-in">
         <h2><i class="fas fa-lightbulb"></i> 1. Motivation & Research</h2>
-        <h3><i class="fas fa-question-circle"></i> The Why</h3>
-        <p>[在这里输入200字：为什么你们团队选择了校园导览（Campus Tour）这个主题？]</p>
+        <p>
+            In the daily operation of universities and the adaptation process of new campus users, <strong>freshmen,
+                prospective students, and visiting scholars</strong> usually rely on 2D flat maps provided by universities
+            to understand the spatial layout of the campus. However, such traditional navigation methods have significant
+            limitations in practical application.
+        </p>
+        <p>
+            Firstly, the dimension of information presentation is insufficient. Traditional 2D maps can only provide
+            abstract geographical location relationships, lacking intuitive expression of building appearance, internal
+            spatial structure, and functional layout, making it difficult for users to establish complete and accurate
+            spatial cognition.
+        </p>
+        <p>
+            Secondly, the efficiency of practical use is relatively low. Some teaching buildings on campus (such as
+            <strong>SA, SB, SC, SD, etc.</strong>) have multiple entrances and complex connected structures. Even when users
+            arrive near the target building, they still struggle to locate the effective entrance quickly, resulting in
+            problems such as getting lost and directional anxiety.
+        </p>
+        <p>
+            Thirdly, existing navigation modes lack interactivity and user experience. Users mostly receive information
+            passively and lack willingness to participate and explore actively, making the campus navigation process
+            monotonous and unable to meet the usage needs of young user groups.
+        </p>
+        <p>
+            Based on the above practical problems, this project proposes a core research question: <em>how to help users
+                perceive the campus space more intuitively and explore the campus more efficiently without increasing the
+                usage threshold?</em>
+        </p>
+    
+        <h3 id="gap"><i class="fas fa-search"></i> The Gap</h3>
+    
+        <h3>Academic Papers</h3>
+        <ul class="good">
+            <li><b>What They Did Well:</b></li>
+            <li><b>Many studies on virtual tours and gamification have shown:</b></li>
+            <li>360° virtual tours can enhance users' sense of immersion and spatial cognition, allowing them to form an
+                intuitive understanding of the real environment online [1].</li>
+            <li>Gamification mechanisms can effectively increase user engagement, exploration willingness, and platform
+                activity, such as points, badges, and achievement systems that can enhance users' motivation to continue using
+                [2].</li>
+            <li>Virtual tours can not only provide information but also enhance cultural transmission and community identity,
+                especially suitable for educational and campus settings [3].</li>
+        </ul>
+        <ul class="bad">
+            <li><b>What They Missed:</b></li>
+            <li><b>Although existing research has verified the value of virtual tours and gamification, there are still some
+                    shortcomings:</b></li>
+            <li>Most studies focus more on "immersive experience" or "user engagement" and lack consideration of real campus
+                usage scenarios, such as: difficulty in finding building entrances, and the difficulty in identifying
+                multi-entry teaching buildings.</li>
+            <li>Some AR or VR systems in some studies are technically complex and have high requirements for device performance,
+                which are not suitable for lightweight web platforms [4].</li>
+            <li>Research on gamification also points out that if the reward mechanism is overemphasized, users may only focus on
+                "completing tasks" and ignore the true information acquisition and learning process [5].</li>
+        </ul>
+    
+        <h3>Commercial Products</h3>
+        <ul class="good">
+            <li><b>What They Did Well:</b></li>
+            <li><b>Existing commercial guide products (Google Maps, campus virtual tour websites, travel guide Apps, etc.)
+                generally perform well in the following aspects:</b></li>
+            <li>Providing clear map structures and location markers.</li>
+            <li>Supporting image, text, or audio introductions.</li>
+            <li>Some virtual campus platforms offer 360° panoramic viewing, enhancing the visual experience.</li>
+            <li>Maturity in navigation functions, able to quickly help users find their destination.</li>
+        </ul>
+        <ul class="bad">
+            <li><b>What They Missed:</b></li>
+            <li><b>However, these commercial products still have obvious limitations:</b></li>
+            <li>Most products are more inclined towards "navigation tools," focusing on "how to get there," which is not
+                suitable for the campus environment and does not meet the purpose of campus tour guides to "understand the
+                campus."</li>
+            <li>Traditional map products lack: building background introductions, spatial immersion, and campus cultural
+                experiences.</li>
+            <li>Very few products integrate: maps, 360° panoramic views, and game-like exploration mechanisms.</li>
+        </ul>
+    
+        <h3>References</h3>
+        <p>
+            [1] G. R. T. V. Silva, J. M. R. S. Tavares, and P. M. B. Torres, “Virtual tours as a tool for heritage education
+            and dissemination,” ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, vol.
+            IV-2/W6, pp. 895–902, 2019.<br>
+            [2] S. Deterding, D. Dixon, R. Khaled, and L. Nacke, “From game design elements to gamefulness: Defining
+            ‘gamification’,” in Proc. 15th Int. Academic MindTrek Conf., 2011, pp. 9–15.<br>
+            [3] D. Luzzi, E. I. Parisi, M. Ranieri, and G. Tucci, “Interactive and Gamified Educational Virtual Tour for the
+            Preservation of Tangible and Intangible Rural Heritage,” in *The International Archives of the Photogrammetry,
+            Remote Sensing and Spatial Information Sciences*, vol. XLVIII-M-9-2025, Proc. 30th CIPA Symp. “Heritage
+            Conservation from Bits: From Digital Documentation to Data-driven Heritage Conservation,” Seoul, Republic of
+            Korea, Aug. 25–29, 2025.<br>
+            [4] A. Bodzin, R. Araujo Junior, T. Hammond, and D. Anastasio, “Investigating engagement and flow with a
+            placed-based immersive virtual reality game,” presented at the 2021 Association for Science Teacher Education
+            Int. Conf., Online, Jan. 14–15, 2021.<br>
+            [5] R. H. Mogavi, B. Guo, Y. Zhang, E.-U. Haq, P. Hui, and X. Ma, “When gamification spoils your learning: A
+            qualitative case study of gamification misuse in a language-learning app,” in Proc. 9th ACM Conf. Learn. Scale
+            (L@S '22), 2022, pp. 175–188. https://doi.org/10.1145/3491140.352827
+        </p>
+    </div>
+
+</div>
+    <div class="section-card fade-in">
+        <h3><i class="fas fa-users"></i> Stakeholders</h3>
+        <h3>Core Service Targets</h3>
+        <h4>Prospective And New Students</h4>
+        <p>
+            This group represents the primary users of the project. They are unfamiliar with the campus environment and
+            therefore have strong needs for information access and spatial understanding.
+        </p>
+        <ul>
+            <li>They need to understand the distribution and functions of campus buildings in advance</li>
+            <li>They are more likely to get lost in complex buildings (e.g., teaching buildings with multiple entrances)</li>
+            <li>They have a high acceptance of immersive experiences (e.g., 360° panoramic views)</li>
+            <li>They are more likely to engage with check-in and achievement systems</li>
+        </ul>
         
-        <h3><i class="fas fa-search"></i> The Gap</h3>
-        <p>[总结4篇学术论文和4个商业产品。列出它们做得好的3点，以及缺失的3点。]</p>
+        <h4>Visiting Scholars And Guests</h4>
+        <p>
+            This group usually stays on campus for a short period and has limited prior knowledge of the environment, relying
+            more on navigation tools to quickly obtain necessary information.
+        </p>
+        <ul>
+            <li>They focus on building purposes and locations</li>
+            <li>They require efficient and intuitive information presentation</li>
+            <li>They use the system less frequently, but their information needs are more concentrated</li>
+        </ul>
         
-        <h3><i class="fas fa-users"></i> The Stakeholders</h3>
-        <div class="placeholder-box">
-            <i class="fas fa-user-friends"></i>
-            <p>[在此处插入你们的主要和次要用户画像 (Personas) 图片/图表]</p>
+        <h3>Secondary Service Targets</h3>
+        <h4>University Administrators</h4>
+        <p>
+            This group does not directly use the system, but they have an influence on its promotion and the accuracy of its
+            content.
+        </p>
+        <ul>
+            <li>They are concerned with the presentation of the campus image</li>
+            <li>They help enhance the effectiveness of external publicity and promotion</li>
+        </ul>
+        
+        <h4>Current Students (Partial On-Campus Users)</h4>
+        <p>
+            Although this group already has a certain level of familiarity with the campus, they may still get lost in complex
+            buildings or in less frequently used areas.
+        </p>
+        <ul>
+            <li>They may need assistance in locating entrances or classrooms</li>
+            <li>They have both functional and entertainment-related needs</li>
+        </ul>
         </div>
+    </div>
+
+    <div class="section-card fade-in">
+        <h3><i class="fas fa-user-friends"></i>Stakeholders</h3>
+        <img src="Portfolio_Pictures/WOULD YOU BE WILLING TO USE A NEW CAMPUS TOUR GUIDE WEBPAGE.png"
+            alt="WOULD YOU BE WILLING TO USE A NEW CAMPUS TOUR GUIDE WEBPAGE"
+            style="width:100%;">
+        <br><br>
+        <img src="Portfolio_Pictures/What characteristics should a good campus guide webpage possess.png"
+            alt="What characteristics should a good campus guide webpage possess"
+            style="width:100%;">
     </div>
 
     <div class="section-card fade-in">
         <h2><i class="fas fa-list-check"></i> 2. User Requirements</h2>
         <h3><i class="fas fa-map"></i> User Journey Map</h3>
-        <div class="placeholder-box">
-            <i class="fas fa-route"></i>
-            <p>[在此处插入用户旅程图，展示访客/新生游览校园时的痛点]</p>
-        </div>
-        
-        <h3><i class="fas fa-tasks"></i> Requirements List</h3>
-        <ul>
-            <li>[Must-have 1: e.g., 实时定位导览]</li>
-            <li>[Must-have 2: e.g., 交互式建筑历史讲解]</li>
-            <li>[Must-have 3: e.g., 寻宝游戏化体验]</li>
-        </ul>
+            <img src="Portfolio_Pictures/What are the shortcomings of campus tour guides nowadays.png"
+                alt="What are the shortcomings of campus tour guides nowadays"
+                style="width:100%;">
+ 
+        <h3><i class="fas fa-tasks"></i>Requirement List</h3>
 
-        <h3><i class="fas fa-camera"></i> Evidence of Life</h3>
-        <div class="placeholder-box">
-            <i class="fas fa-photo-video"></i>
-            <p>[上传5张照片或短视频片段：展示你们采访潜在用户或在校园实地考察的场景]</p>
-        </div>
+        <p>
+            <strong>Campus tour can be done online in advance:</strong><br>
+            Users can learn about the campus environment and building information through the website without having to be on-site, reducing unfamiliarity and establishing spatial cognition in advance.
+        </p>
+
+        <p>
+            <strong>Simple, beautiful, and user-friendly interface:</strong><br>
+            Utilizing clear and intuitive interaction design, it reduces the learning cost and allows new users to quickly get started and efficiently obtain information.
+        </p>
+
+        <p>
+            <strong>Enhanced exploration fun:</strong><br>
+            Through gamification mechanisms such as check-ins and achievements, it motivates users to actively browse more buildings, increasing participation and usage duration.
+        </p>
+
+        <p>
+            <strong>More realistic campus map for immersive tours:</strong><br>
+            Combining maps with 360° panoramic content, it improves the accuracy of spatial reconstruction, providing users with an immersive experience close to a real visit.
+    </p>
+
+            <h3><i class="fas fa-camera"></i> Evidence of Life</h3>
+            <div class="video-grid">
+                <div class="video-item">
+                    <b><p class="video-caption" style="text-align: center;">Interview 1</p></b>
+                    <video controls width="100%">
+                        <source src="Portfolio_Videos/01_v2.mp4" type="video/mp4">
+                    </video>
+                    <br><br>
+                </div>
+
+                <div class="video-item">
+                    <b><p class="video-caption" style="text-align: center;">Interview 2</p></b>
+                    <video controls width="100%">
+                        <source src="Portfolio_Videos/02_v2.mp4" type="video/mp4">
+                    </video>
+                    <br><br>
+                </div>
+
+                <div class="video-item">
+                    <b><p class="video-caption" style="text-align: center;">Interview 3</p></b>
+                    <video controls width="100%">
+                        <source src="Portfolio_Videos/03_v2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
     </div>
 
     <div class="section-card fade-in">
         <h2><i class="fas fa-brain"></i> 3. Ideation & Alternatives</h2>
         <h3><i class="fas fa-pencil-ruler"></i> The "Crazy Eights"</h3>
-        <div class="placeholder-box">
-            <i class="fas fa-drafting-compass"></i>
-            <p>[插入8张手绘 UI 草图的照片]</p>
-        </div>
+        <img src="Portfolio_Pictures/Portfolio_Sketches/Sketches_All_In_One.png"
+            alt="What characteristics should a good campus guide webpage possess" style="width:100%;">
         
         <h3><i class="fas fa-balance-scale"></i> Design Alternatives</h3>
-        <p>[对比至少 2-3 种不同的系统运作方式，并解释你们为什么选择了最终的方案。]</p>
+        <div class="alternative-analysis">
+            <h4>Option 1: AR Augmented Reality Tour</h4>
+            <p>Identify buildings through mobile phone cameras, overlay historical information and virtual elements.</p>
+            
+            <h4>Option 2: Traditional map navigation+audio explanation</h4>
+            <p>GPS based map navigation, accompanied by pre recorded audio explanations.</p>
+            
+            <h4>Option 3: Gamified Interactive Tour</h4>
+            <p>Design the campus tour as a treasure hunt game, unlocking historical knowledge by completing tasks.</p>
 
-        <h3><i class="fas fa-prototype"></i> Low-Fi Prototype</h3>
-        <p><strong>Figma Link:</strong> <a href="#">[粘贴你们的可点击 Figma 原型链接]</a></p>
+            <br>
+            
+            <p>
+                <strong>Reason for selection：</strong> The final choice for this project is <strong>Option Three: Gamified
+                    Interactive Tour</strong>. The key considerations were as follows:
+                <br><br>
+                <strong>Technical Feasibility</strong><br>
+                Compared to the AR technology in Option One, the gamified tour didn't need complex real-time image recognition, high
+                computing power, or accurate positioning support, so it was much easier to develop. Basic web map functions,
+                task-triggering logic, and QR code scanning were all that was required. This approach fitted the project's timeline
+                and resources better, allowing for quicker development, testing, and deployment.
+                <br><br>
+                <strong>User Experience and Alignment with Project Goals</strong>
+            <ul>
+                <li><strong>Increased User Engagement:</strong> Turning the passive campus tour into an active treasure-hunt style
+                    experience made it far more fun and immersive than static maps or voice-only guides.</li>
+                <li><strong>Meeting Core Needs:</strong> Features like check-in tasks, an achievement system, and social
+                    leaderboards directly addressed new students' desire to "make friends while exploring," helping them expand
+                    their social circles on campus through interaction.</li>
+                <li><strong>Enhanced Platform Reusability:</strong> The task unlocking and achievement collection mechanisms
+                    effectively encouraged users to revisit the platform and explore different campus areas, which significantly
+                    boosted long-term activity.</li>
+            </ul>
+            <strong>Integration of Advantages from Other Options</strong><br>
+            Even though Option One and Option Two weren't chosen as the core solution, their main strengths were still absorbed and
+            included in the final design:
+            <ul>
+                <li>Borrowing the spatial information visualization idea from Option One, we added a one-click toggle between 2D and
+                    3D maps for the main campus buildings. This balanced the clarity of traditional navigation with a more immersive
+                    feel.</li>
+                <li>Taking the positioning and navigation logic from Option Two, we implemented accurate user location
+                    functionality, so users always received clear directional guidance throughout the tour.</li>
+            </ul>
+            <strong>Comparison and Advantages of the Options</strong>
+            <ul>
+                <li><strong>Option One (AR Tour):</strong> Although it looked impressive, it had poor device compatibility, high
+                    development costs, and major technical challenges, which could lead to a poor experience for some users.</li>
+                <li><strong>Option Two (Traditional Map + Voice Guide):</strong> It was technically mature, but turned out to be
+                    boring and lacked interaction, so it didn't meet the project's main goals of increasing fun and social
+                    engagement.</li>
+            </ul>
+            <strong>Conclusion</strong><br>
+            Based on the above factors, the Gamified Interactive Tour achieved the best balance between technical feasibility, user
+            experience, and project goals, making it the most suitable choice for this project.
+            </p>
+        </div>
+
+        <h3>Low-Fi Prototype</h3>
+        <p>
+            <strong>Figma Link:</strong>
+            <a href="https://mild-needle-33273463.figma.site" target="_blank"
+                style="color: var(--primary); text-decoration: underline;">
+                https://mild-needle-33273463.figma.site
+            </a>
+        </p>
     </div>
 
     <div class="section-card fade-in">
         <h2><i class="fas fa-code"></i> 4. Technical Implementation</h2>
         <h3><i class="fas fa-sitemap"></i> System Architecture</h3>
-        <div class="placeholder-box">
-            <i class="fas fa-project-diagram"></i>
-            <p>[在此处插入系统架构图：展示 Web App 如何处理数据]</p>
-        </div>
+        <img src="Portfolio_Pictures/Portfolio_System_Architecture/System_Architecture_v2.png" alt="System_Architecture_v2"
+            style="width:100%;">
         
         <h3><i class="fas fa-desktop"></i> High-Fi Prototype</h3>
-        <p><strong>Live URL:</strong> <a href="#">[最终托管在 Vercel 或 GitHub Pages 的应用链接]</a></p>
+        <p><strong>Live URL:</strong> <a href="https://xjtlu-tour.vercel.app/" target="_blank"
+                style="color: var(--primary); text-decoration: underline;">
+                https://xjtlu-tour.vercel.app/</a></p>
         
         <h3><i class="fas fa-users-cog"></i> Individual Contributions</h3>
-        <table>
+        <table style="width: 100%; table-layout: fixed;">
+
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 10%;">
+                <col style="width: 75%;">
+            </colgroup>
             <tr>
                 <th>Team Member</th>
                 <th>Student ID</th>
-                <th>Specific Contribution (Code, UI, Content, Testing)</th>
+                <th>Specific Contribution</th>
             </tr>
-            <tr><td>[Member 1 Name]</td><td>[ID]</td><td>[Detail]</td></tr>
-            <tr><td>[Member 2 Name]</td><td>[ID]</td><td>[Detail]</td></tr>
-            <tr><td>[Member 3 Name]</td><td>[ID]</td><td>[Detail]</td></tr>
-            <tr><td>[Member 4 Name]</td><td>[ID]</td><td>[Detail]</td></tr>
+
+            <tr>
+                <td style="white-space: nowrap;">Yufeng Wang</td>
+                <td>2363248</td>
+                <td>Initial Portfolio development; GitHub library initialize; System low-fi and high-fi prototype design and
+                    coding; Live website deployment; Video filming assistant</td>
+            </tr>
+            <tr>
+                <td style="white-space: nowrap;">Ningruo Wang</td>
+                <td>2362941</td>
+                <td>Survey questionnaire design, distribution, and data analysis; Poster and portfolio copywriting; Campus
+                    building and street view photography; Initial user feedback collection filming; Filming for Video Part 3
+                    (Concept) and Part 5 (Impact)</td>
+            </tr>
+            <tr>
+                <td style="white-space: nowrap;">Shengyuan He</td>
+                <td>2361889</td>
+                <td>Poster design/layout; Copy proofreading & revision; Portfolio content refinement; Chinese-English
+                    translation; Interview video shooting</td>
+            </tr>
+            <tr>
+                <td style="white-space: nowrap;">Xiantong Zeng</td>
+                <td>2362360</td>
+                <td>Project leadership; Product development guidance; Poster image optimization, printing and exhibition; Image
+                    generation model prompt engineering development; Portfolio development optimization and layout; Portfolio
+                    copy and image editing and generation; Panoramic image shooting and post-processing; Video shooting guidance;
+                    Video copy editing; Video production</td>
+            </tr>
         </table>
     </div>
 
     <div class="section-card fade-in">
         <h2><i class="fas fa-star"></i> 5. Evaluation & Reflection</h2>
         <h3><i class="fas fa-user-check"></i> Usability Testing</h3>
-        <p>[记录你们使用 Alpha 版本与 3 位真实用户测试的结果。]</p>
+        <div class="testing-results">
+            <h4>Test method</h4>
+            <p>Test with three real users using Alpha version, including task completion testing, user satisfaction survey, and
+            semi-structured interviews.</p>
+            
+            <br>
 
-        <h3><i class="fas fa-sync-alt"></i> Iterative Refinement</h3>
-        <div class="placeholder-box">
-            <i class="fas fa-exchange-alt"></i>
-            <p>[Before & After 截图：展示基于用户反馈所做的修改]</p>
+            <h4>Test results</h4>
+            <ul>
+                <li>
+                    <strong>Test result 1: User Yu Qiao (New Student)</strong><br>
+                    <em>Background: Rarely goes to the south campus because his classes are mostly on the north campus, so he knows
+                        very little about the south campus.</em>
+                    <ul>
+                        <li><strong>Task completion:</strong> Quickly familiarized himself with the use of the webpage, gained a
+                            fast understanding of campus buildings, and completed one check-in operation.</li>
+                        <li><strong>Satisfaction feedback:</strong> Overall score 8/10; quick to get started with the interface 5/5;
+                            campus map combining 2D and 3D views helped quickly understand the campus 4/5; guide fun factor: 3.5/5.
+                        </li>
+                        <li><strong>Key interview feedback:</strong> The check-in feature is too simplistic as the only means to
+                            enhance fun.</li>
+                        <li><strong>Suggested modification:</strong> More data needs to be collected later, and new gamified
+                            features need to be designed.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Test result 2: User Hong Mao (Sophomore Student)</strong><br>
+                    <em>Background: Enjoys making friends.</em>
+                    <ul>
+                        <li><strong>Task completion:</strong> Completed one QR code exchange, quickly understood campus buildings.
+                        </li>
+                        <li><strong>Satisfaction feedback:</strong> Overall score 8/10; quick to get started with the interface 5/5;
+                            guide fun factor: 4/5; ease of expanding campus social network: 4/5.</li>
+                        <li><strong>Key interview feedback:</strong> Hopes to add navigation for different classrooms, which would
+                            be very helpful for freshmen who tend to get lost.</li>
+                        <li><strong>Suggested modification:</strong> Requires student community support. Take photos of indoor
+                            routes for different classrooms, process them, and add them to the webpage for future development of
+                            auxiliary wayfinding functions.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Test result 3: User Fei Li (Prospective Student)</strong><br>
+                    <em>Background: Planning to apply to XJTLU.</em>
+                    <ul>
+                        <li><strong>Task completion:</strong> Quickly familiarized himself with the use of the webpage, gained a
+                            fast understanding of campus buildings, and completed generation of a personal QR code.</li>
+                        <li><strong>Satisfaction feedback:</strong> Overall score 8/10; the interface is straightforward and easy to
+                            learn 5/5; campus map combining 2D and 3D views helped quickly understand the campus 4/5; guide fun
+                            factor: 4/5; social features: 3.5/5.</li>
+                        <li><strong>Key interview feedback:</strong> Would like to obtain more information about campus social
+                            activities or entertainment.</li>
+                        <li><strong>Suggested modification:</strong> Requires support from student clubs and communities. Expand
+                            community features based on the existing guide functions, allowing students or club managers to post
+                            messages within the platform.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
+        <h3><i class="fas fa-sync-alt"></i> Iterative Refinement</h3>
+        <img src="Portfolio_Pictures/Portfolio_Iterative_Refinement/Iterative_Refinement_v1.png"
+            alt="Iterative_Refinement_v1" style="width:100%;">
+    </div>
+    <div class="section-card fade-in">
         <h3><i class="fas fa-lightbulb"></i> Final Reflection</h3>
-        <p>[简短讨论你们设计的社会/伦理影响。如果使用了 AI (如 Vibe Coding)，请包含 "Technical Reflection" 说明使用了什么提示词，以及如何验证代码的。务必在此处添加正式的 AI 使用引用格式。]</p>
+        <div class="reflection-content">
+            <h4>Social/Ethical Impact</h4>
+            <p>
+                This project is not only a functional campus navigation tool but also has certain social and ethical impacts,
+                primarily reflected in campus culture dissemination, community connection, and privacy protection.
+                <br><br>
+                <strong>Promoting the Preservation of Campus Culture (Cultural Preservation)</strong><br>
+                By integrating building introductions, historical background, and visual content into the map, this project
+                systematically presents information that was previously scattered, allowing users to gain a more comprehensive
+                understanding of campus culture.
+                For new students, prospective students, and visiting scholars, this "visual + interactive" navigation approach helps
+                to:
+            <ul>
+                <li>Quickly understand the campus spatial layout and historical context</li>
+                <li>Build a sense of identity and belonging toward the campus in advance</li>
+                <li>Reduce feelings of unfamiliarity and alienation when first arriving on campus</li>
+            </ul>
+            Therefore, this project plays a role in digitally preserving campus culture.
+            <br><br>
+            <strong>Enhancing Community Cohesion (Community Engagement)</strong><br>
+            By introducing check-in and achievement mechanisms, the project transforms campus exploration from "passively receiving
+            information" to "actively participating in an experience," thereby:
+            <ul>
+                <li>Encouraging students to leave their dormitories and explore different areas of the campus</li>
+                <li>Promoting interaction among students (e.g., sharing check-in progress, recommending locations)</li>
+                <li>Helping users quickly make new friends and easily adapt to campus life</li>
+                <li>Enhancing users' sense of participation and connection to the campus space</li>
+            </ul>
+            This gamified design not only increases fun but also subtly strengthens the overall cohesion of the campus community.
+            <br><br>
+            <strong>Privacy and Data Ethics Considerations (Privacy & Ethical Considerations)</strong><br>
+            While providing an immersive experience, this project also needs to address potential privacy concerns:
+            <ul>
+                <li><strong>Image capture issues:</strong> When capturing panoramic images and building photos, efforts should be
+                    made to avoid capturing identifiable personal information (such as faces, license plates, etc.)</li>
+                <li><strong>User data issues:</strong> During interviews, the personal wishes of respondents will be fully
+                    respected, and they will decide whether to disclose their real names in the portfolio research results.</li>
+                <li><strong>Permissions and informed consent:</strong> When using features such as taking photos, user authorization
+                    should be obtained, and a clear privacy statement should be provided.</li>
+            </ul>
+            </p>
+            
+            <h4>Technical Reflection</h4><br>
+            <p>
+                <strong>1. AI Tools Used</strong><br>
+                Trae AI and Figma were used for web development. Claude Opus 4.6 and Qwen3 Max Thinking were used for HTML coding and
+                prompt engineering. DeepSeek V3 and V4 were used for copywriting optimization and
+                translation. Google's Nano Banan Pro and Nano Banana 2 were used for sketching, project planning diagrams, and most
+                importantly, panoramic image processing.
+                <br><br>
+                <strong>2. Development Phase & AI Application</strong><br>
+                Trae AI was used for prototyping, core development, type definitions, 360° view integration, map refactoring, QR
+                scanning, and debugging. Claude Opus 4.6 and Qwen3 Max Thinking were primarily used for prompt crafting and HTML code
+                writing. DeepSeek V3 and V4 handled copywriting optimization
+                and translation. Google Nano Banan Pro and Nano Banana 2 were used to generate sketches, project planning diagrams,
+                and critically, to process panoramic images. Deployment to Vercel was manual.
+                <br><br>
+                <strong>3. AI Contribution Summary</strong><br>
+                Trae AI generated most frontend components and feature logic. Claude Opus 4.6 and Qwen3 Max Thinking focused on
+                prompt writing, code generation, and project analysis. DeepSeek models handled copy optimization and translation.
+                Google Nano Banan tools produced visual planning materials including sketches and diagrams, with a key role in
+                panoramic image processing.
+                <br><br>
+                <strong>4. Human Oversight & Quality Control</strong><br>
+                All AI-generated code and prompts were manually reviewed. Testing was performed manually on Android and iOS.
+                <br><br>
+                <strong>5. Limitations & Workarounds</strong><br>
+                AI poorly recognized image-based location data, solved by a human-defined Location type system. iOS gyroscope
+                permission issues were resolved with manually added code.
+                <br><br>
+                <strong>6. Ethical & Practical Notes</strong><br>
+                No confidential data was shared with AI tools. AI served solely as a productivity aid. All third-party libraries and
+                AI-generated outputs were vetted by the developer.
+            </p>
+        </div>
     </div>
 
     <footer>
         <div class="footer-content">
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p>&copy; 2026 Group [ID]. Prepared for CPT208 Human-Centric Computing.</p>
+            <p>Thank you for reading all the above content.</p>
+            <p>&copy; 2026 Group B3-3. Prepared for CPT208 Human-Centric Computing.</p>
             <p>Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> for human-centric computing</p>
         </div>
     </footer>
 
     <script>
-        // 添加滚动动画效果
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
             
